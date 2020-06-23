@@ -14,7 +14,6 @@ void dfs(int s,vector<int> &temp,vector<vector<int>> &g,vector<int> &A,vector<in
     for(auto x : g[s]){
         if(vis[x]==0){
             int count = findancestors(temp,A[x-1]);
-            cout<<x<<"      "<<temp.size()<<"   "<<count<<"\n";
             ans[x-1] = count;
             temp.push_back(A[x-1]);
             dfs(x,temp,g,A,vis,ans);
